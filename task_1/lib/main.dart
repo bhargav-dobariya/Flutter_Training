@@ -53,226 +53,229 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Text(radioGroup),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(male),
-                Radio(
-                  groupValue: radioGroup,
-                  value: male,
-                  onChanged: (value) {
-                    radioGroup = male;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(female),
-                Radio(
-                  groupValue: radioGroup,
-                  value: female,
-                  onChanged: (value) {
-                    radioGroup = female;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(others),
-                Radio(
-                  groupValue: radioGroup,
-                  value: others,
-                  onChanged: (value) {
-                    radioGroup = others;
-                    setState(() {});
-                  },
-                  activeColor: Colors.red,
-                ),
-              ],
-            ),
-            Text(radioGroup2),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(man),
-                Radio(
-                  groupValue: radioGroup,
-                  value: man,
-                  onChanged: (value) {
-                    radioGroup2 = male;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(female),
-                Radio(
-                  groupValue: radioGroup,
-                  value: female,
-                  onChanged: (value) {
-                    radioGroup2 = female;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(both),
-                Radio(
-                  groupValue: radioGroup2,
-                  value: both,
-                  onChanged: (value) {
-                    radioGroup2 = both;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Select/Deselect(Odd?Even)'),
-                Checkbox(
-                  value: oddEven,
-                  onChanged: (value) {
-                    if (value != null) {
-                      if (value) {
-                        one = three = five = true;
-                        two = four = false;
-                      } else {
-                        one = three = five = false;
-                        two = four = true;
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Text(radioGroup),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(male),
+                  Radio(
+                    groupValue: radioGroup,
+                    value: male,
+                    onChanged: (value) {
+                      radioGroup = male;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(female),
+                  Radio(
+                    groupValue: radioGroup,
+                    value: female,
+                    onChanged: (value) {
+                      radioGroup = female;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(others),
+                  Radio(
+                    groupValue: radioGroup,
+                    value: others,
+                    onChanged: (value) {
+                      radioGroup = others;
+                      setState(() {});
+                    },
+                    activeColor: Colors.red,
+                  ),
+                ],
+              ),
+              Text(radioGroup2),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(man),
+                  Radio(
+                    groupValue: radioGroup2,
+                    value: man,
+                    onChanged: (value) {
+                      radioGroup2 = man;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(woman),
+                  Radio(
+                    groupValue: radioGroup2,
+                    value: woman,
+                    onChanged: (value) {
+                      radioGroup2 = woman;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(both),
+                  Radio(
+                    groupValue: radioGroup2,
+                    value: both,
+                    onChanged: (value) {
+                      radioGroup2 = both;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Select/Deselect(Odd?Even)'),
+                  Checkbox(
+                    value: oddEven,
+                    onChanged: (value) {
+                      if (value != null) {
+                        if (value) {
+                          one = three = five = true;
+                          two = four = false;
+                        } else {
+                          one = three = five = false;
+                          two = four = true;
+                        }
+                        oddEven = value;
+                        setState(() {});
                       }
-                      oddEven = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('1'),
-                Checkbox(
-                  value: one,
-                  onChanged: (value) {
-                    if (value != null) {
-                      one = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('2'),
-                Checkbox(
-                  value: two,
-                  onChanged: (value) {
-                    if (value != null) {
-                      two = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('3'),
-                Checkbox(
-                  value: three,
-                  onChanged: (value) {
-                    if (value != null) {
-                      three = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('4'),
-                Checkbox(
-                  value: four,
-                  onChanged: (value) {
-                    if (value != null) {
-                      four = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('5'),
-                Checkbox(
-                  value: five,
-                  onChanged: (value) {
-                    if (value != null) {
-                      five = value;
-                      setState(() {});
-                    }
-                  },
-                ),
-              ],
-            ),
-            Image.network(
-              img,
-              height: 200,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                    child: Checkbox(
-                        value: toggle,
-                        onChanged: (value) {
-                          if (value != null) {
-                            if (value) {
-                              img = img1;
-                            } else {
-                              img = img2;
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('1'),
+                  Checkbox(
+                    value: one,
+                    onChanged: (value) {
+                      if (value != null) {
+                        one = value;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('2'),
+                  Checkbox(
+                    value: two,
+                    onChanged: (value) {
+                      if (value != null) {
+                        two = value;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('3'),
+                  Checkbox(
+                    value: three,
+                    onChanged: (value) {
+                      if (value != null) {
+                        three = value;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('4'),
+                  Checkbox(
+                    value: four,
+                    onChanged: (value) {
+                      if (value != null) {
+                        four = value;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('5'),
+                  Checkbox(
+                    value: five,
+                    onChanged: (value) {
+                      if (value != null) {
+                        five = value;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                ],
+              ),
+              Image.network(
+                img,
+                height: 200,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      child: Checkbox(
+                          value: toggle,
+                          onChanged: (value) {
+                            if (value != null) {
+                              if (value) {
+                                img = img1;
+                              } else {
+                                img = img2;
+                              }
+                              toggle = value;
+                              setState(() {});
                             }
-                            toggle = value;
-                            setState(() {});
-                          }
-                        }))
-              ],
-            )
-          ],
+                          }))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -297,6 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
+      // ignore: dead_code
       children: [
         Text(male),
         Radio(
